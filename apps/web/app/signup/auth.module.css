@@ -1,0 +1,122 @@
+/* Reuse login auth styles */
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+  }
+}
+
+.main {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: var(--font-geist-sans);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-geist-mono);
+  font-size: 14px;
+  color: var(--foreground);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-alpha-200);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 2px var(--gray-alpha-100);
+}
+
+.submit {
+  margin-top: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--foreground);
+  color: var(--background);
+  font-family: var(--font-geist-sans);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.footer {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  opacity: 0.9;
+}
